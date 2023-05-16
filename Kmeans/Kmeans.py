@@ -23,11 +23,12 @@ plt.plot()
 colors = ['b', 'g', 'r']
 markers = ['o', 'v', 's']
 
-# KMeans algorithm 
-#K = 3
+X = np.asarray(X)  # Convert X to a numpy array
 kmeans_model = KMeans(n_clusters=3).fit(X)
-plt.plot()
+
 for i, l in enumerate(kmeans_model.labels_):
-    plt.plot(f1[i], f2[i], color=colors[l], marker=markers[l],ls='None')
-    plt.xlim([0, 100])
-    plt.ylim([0, 50])
+    plt.plot(f1[i], f2[i], color=colors[l], marker=markers[l], ls='None')
+
+plt.xlim([0, 100])
+plt.ylim([0, 50])
+plt.show()
